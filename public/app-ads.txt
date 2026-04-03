@@ -1,2 +1,1 @@
-# AdMob の「app-ads.txt を設定」画面からコピーした内容をここに貼り付けてください
-# 例: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-5751354921806926, DIRECT, f08c47fec0942fa0
