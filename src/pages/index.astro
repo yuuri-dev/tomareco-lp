@@ -2,223 +2,679 @@
 import Layout from '../layouts/Layout.astro';
 
 const appStoreUrl = 'https://apps.apple.com/jp/app/tomareco/id6760455427';
+const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="TomaReco（トマレコ） — 毎日の学習を記録して習慣にする">
+<Layout title="TomaReco（トマレコ） — 学習を、見える習慣に。">
   <main>
 
-    <!-- Hero -->
+    <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="hero-inner">
+        <div class="hero-badge">iOS アプリ — 無料</div>
         <div class="app-icon-wrap">
           <div class="app-icon">🍅</div>
         </div>
         <h1 class="app-name">TomaReco</h1>
         <p class="app-kana">トマレコ</p>
-        <p class="hero-copy">学習を記録して、<br />習慣にする。</p>
-        <p class="hero-sub">シンプルに続けるための iOS アプリ</p>
+        <p class="hero-copy">学習を、<br />見える習慣に。</p>
+        <p class="hero-sub">1タップで記録、カレンダーで継続が見える。<br />シンプルだから、続く。</p>
         <a href={appStoreUrl} class="appstore-btn" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
           </svg>
-          App Store からダウンロード
+          App Store からダウンロード（無料）
         </a>
+        <div class="hero-scroll-hint" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 80H1440V20C1200 70 960 0 720 30C480 60 240 0 0 40V80Z" fill="#fff"/>
+        </svg>
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
+    <!-- ===== PROBLEM ===== -->
+    <section class="problem reveal">
       <div class="container">
-        <h2 class="section-title">シンプルだから、続く</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">📝</div>
-            <h3>かんたん記録</h3>
-            <p>今日学んだことをすぐにメモ。複雑な操作は一切なし。</p>
+        <p class="eyebrow">こんな経験、ありませんか？</p>
+        <h2 class="section-title">学習が<span class="accent">続かない</span>のは<br />あなたのせいじゃない</h2>
+        <div class="problem-cards">
+          <div class="problem-card">
+            <div class="problem-emoji">😮‍💨</div>
+            <p>「今日も勉強したけど<br />なんか達成感がない…」</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">📅</div>
-            <h3>カレンダーで振り返り</h3>
-            <p>記録した日が一目でわかる。継続の可視化がやる気を維持します。</p>
+          <div class="problem-card">
+            <div class="problem-emoji">📓</div>
+            <p>「記録しようとしたら<br />面倒になってやめた」</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔥</div>
-            <h3>ストリーク機能</h3>
-            <p>連続記録日数を表示。途切れたくない気持ちが習慣を作る。</p>
+          <div class="problem-card">
+            <div class="problem-emoji">😴</div>
+            <p>「3日坊主で終わる。<br />また続かなかった…」</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>シンプルなUX</h3>
-            <p>余計な機能は持たない。「記録する」ことだけに集中した設計。</p>
+        </div>
+        <p class="problem-note">記録の仕組みが複雑すぎるから、続かないんです。</p>
+      </div>
+    </section>
+
+    <!-- ===== SOLUTION ===== -->
+    <section class="solution reveal">
+      <div class="container solution-inner">
+        <div class="solution-text">
+          <p class="eyebrow">TomaReco の考え方</p>
+          <h2 class="section-title-left">記録は、<br /><span class="accent">シンプル</span>じゃないと<br />続かない。</h2>
+          <p class="solution-body">
+            TomaReco は「学習を記録する」ことだけに絞ったアプリです。
+            タイトルとジャンルを選ぶだけで完了。カレンダーに積み上がるトマトが、
+            あなたの努力を可視化してくれます。
+          </p>
+        </div>
+        <div class="solution-visual">
+          <div class="phone-frame">
+            <img
+              src={`${base}/top_img.jpeg`}
+              alt="TomaReco ホーム画面 - カレンダーで学習を可視化"
+              class="phone-screenshot"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
+    <!-- ===== HOW TO RECORD (VIDEO) ===== -->
+    <section class="how-to reveal">
       <div class="container">
-        <h2>今日から、始めよう。</h2>
-        <p>無料でダウンロードできます</p>
-        <a href={appStoreUrl} class="appstore-btn appstore-btn--white" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-          App Store からダウンロード
-        </a>
+        <p class="eyebrow">かんたん記録</p>
+        <h2 class="section-title">記録は<span class="accent">たったの数秒</span></h2>
+        <p class="how-to-sub">タイトルとジャンルを入れて、タップするだけ。<br />複雑な操作は一切ありません。</p>
+        <div class="video-wrap">
+          <div class="phone-frame phone-frame--video">
+            <video
+              src={`${base}/register.MP4`}
+              autoplay
+              muted
+              loop
+              playsinline
+              class="phone-video"
+              aria-label="TomaReco の記録操作デモ"
+            ></video>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- ===== SCREENSHOTS ===== -->
+    <section class="screenshots reveal">
       <div class="container">
-        <p>&copy; 2025 TomaReco. All rights reserved.</p>
+        <p class="eyebrow">アプリ画面</p>
+        <h2 class="section-title">これだけ。<span class="accent">シンプル</span>だから毎日開ける。</h2>
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <div class="phone-frame">
+              <img
+                src={`${base}/top_img.jpeg`}
+                alt="ホーム画面 - カレンダーで記録を可視化"
+                class="phone-screenshot"
+                loading="lazy"
+              />
+            </div>
+            <p class="screenshot-label">📅 カレンダーで記録を確認</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="phone-frame">
+              <img
+                src={`${base}/record_img.jpeg`}
+                alt="統計画面 - 学習データのまとめ"
+                class="phone-screenshot"
+                loading="lazy"
+              />
+            </div>
+            <p class="screenshot-label">📊 統計で成長を実感</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="phone-frame">
+              <img
+                src={`${base}/setting_img.jpeg`}
+                alt="設定画面 - ジャンルやリマインダーの設定"
+                class="phone-screenshot"
+                loading="lazy"
+              />
+            </div>
+            <p class="screenshot-label">⚙️ ジャンル・リマインダー設定</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features reveal">
+      <div class="container">
+        <p class="eyebrow">主な機能</p>
+        <h2 class="section-title">シンプルだから、<span class="accent">続く</span></h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <span class="feature-icon">📅</span>
+            </div>
+            <h3>カレンダーで可視化</h3>
+            <p>学習した日がカレンダーで一目でわかる。積み上がるトマトが、やる気を生み出します。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <span class="feature-icon">🔥</span>
+            </div>
+            <h3>streak（連続記録）</h3>
+            <p>連続記録日数を表示。「途切れさせたくない」という気持ちが習慣を作ります。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <span class="feature-icon">📊</span>
+            </div>
+            <h3>統計で成長を確認</h3>
+            <p>学習日数・総記録数・ジャンル別グラフで自分の積み上げが一目でわかります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DIFFERENTIATORS ===== -->
+    <section class="diff reveal">
+      <div class="container">
+        <p class="eyebrow">TomaReco だけの強み</p>
+        <h2 class="section-title">使う前の<span class="accent">ハードルをゼロ</span>に</h2>
+        <div class="diff-list">
+          <div class="diff-item">
+            <div class="diff-icon">🚫</div>
+            <div>
+              <strong>ログイン不要</strong>
+              <p>アカウント登録なし。ダウンロードしてすぐ使えます。</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <div class="diff-icon">📱</div>
+            <div>
+              <strong>完全ローカル保存</strong>
+              <p>データはすべて端末内に保存。外部サービス連携なし、プライバシーも安心。</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <div class="diff-icon">🌿</div>
+            <div>
+              <strong>シンプルなUX</strong>
+              <p>余計な機能は持たない。「記録する」ことだけに集中した設計。</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <div class="diff-icon">✨</div>
+            <div>
+              <strong>無料で使える</strong>
+              <p>課金なし、サブスクなし。すべての機能を無料で使えます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VOICE ===== -->
+    <section class="voice reveal">
+      <div class="container">
+        <p class="eyebrow">こんな方におすすめ</p>
+        <h2 class="section-title">毎日の<span class="accent">小さな積み重ね</span>を<br />大切にしたい人へ</h2>
+        <div class="voice-cards">
+          <div class="voice-card">
+            <div class="voice-avatar">🎓</div>
+            <p class="voice-text">勉強しても記録が面倒で続かなかったけど、TomaReco なら1分もかからない</p>
+            <p class="voice-tag"># 試験勉強中の方</p>
+          </div>
+          <div class="voice-card">
+            <div class="voice-avatar">💼</div>
+            <p class="voice-text">カレンダーを見るたびに達成感があって、自然と毎日開くようになった</p>
+            <p class="voice-tag"># 自己学習を習慣化したい方</p>
+          </div>
+          <div class="voice-card">
+            <div class="voice-avatar">🌱</div>
+            <p class="voice-text">streak が途切れるのが嫌で気づいたら3ヶ月続いてました</p>
+            <p class="voice-tag"># 継続が苦手な方</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta reveal">
+      <div class="container">
+        <div class="cta-tomato">🍅</div>
+        <h2>今日から、始めよう。</h2>
+        <p>記録することから、習慣は生まれる。</p>
+        <a href={appStoreUrl} class="appstore-btn appstore-btn--dark" target="_blank" rel="noopener noreferrer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          App Store からダウンロード（無料）
+        </a>
+        <p class="cta-note">iOS 16.0 以降 対応 · 日本語</p>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="container footer-inner">
+        <div class="footer-logo">🍅 TomaReco</div>
+        <nav class="footer-nav">
+          <a href={`${base}/support`}>サポート</a>
+          <span class="footer-divider">·</span>
+          <a href={`${base}/privacy`}>プライバシーポリシー</a>
+        </nav>
+        <p class="footer-copy">&copy; 2025 TomaReco. All rights reserved.</p>
       </div>
     </footer>
 
   </main>
 </Layout>
 
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('revealed');
+      });
+    },
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
 <style>
-  /* ── Variables ── */
   :root {
     --tomato: #ff6347;
     --tomato-dark: #e5533a;
-    --tomato-light: #fff2ef;
+    --tomato-light: #fff5f3;
+    --text: #1a1a1a;
+    --text-muted: #666;
+    --radius: 20px;
   }
 
-  /* ── Hero ── */
-  .hero {
-    background: linear-gradient(160deg, var(--tomato) 0%, #ff8c42 100%);
-    color: #fff;
-    text-align: center;
-    padding: 80px 24px 100px;
+  /* ── Reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .hero-inner {
-    max-width: 480px;
+  .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+  /* ── Shared ── */
+  .container {
+    max-width: 860px;
     margin: 0 auto;
+    padding: 0 24px;
   }
-  .app-icon-wrap {
-    margin-bottom: 16px;
-  }
-  .app-icon {
-    font-size: 72px;
-    line-height: 1;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
-  }
-  .app-name {
-    font-size: 2.8rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 4px;
-  }
-  .app-kana {
-    font-size: 1rem;
-    opacity: 0.85;
-    margin-bottom: 24px;
-  }
-  .hero-copy {
-    font-size: 1.75rem;
+  .eyebrow {
+    font-size: 0.75rem;
     font-weight: 700;
-    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tomato);
     margin-bottom: 12px;
+    text-align: center;
   }
-  .hero-sub {
-    font-size: 1rem;
-    opacity: 0.9;
-    margin-bottom: 36px;
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 48px;
   }
+  .section-title-left {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  .accent { color: var(--tomato); }
 
   /* ── App Store Button ── */
   .appstore-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #1a1a1a;
-    color: #fff;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 14px;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: opacity 0.2s, transform 0.2s;
-  }
-  .appstore-btn:hover {
-    opacity: 0.85;
-    transform: translateY(-2px);
-  }
-  .appstore-btn--white {
     background: #fff;
     color: #1a1a1a;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .appstore-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+  .appstore-btn--dark { background: #1a1a1a; color: #fff; }
+
+  /* ── Phone frame (shared) ── */
+  .phone-frame {
+    width: 200px;
+    background: #1a1a1a;
+    border-radius: 32px;
+    padding: 10px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.08);
+    flex-shrink: 0;
+  }
+  .phone-screenshot {
+    width: 100%;
+    border-radius: 24px;
+    display: block;
+  }
+  .phone-video {
+    width: 100%;
+    border-radius: 24px;
+    display: block;
   }
 
-  /* ── Features ── */
-  .features {
-    padding: 80px 24px;
-    background: #fafafa;
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    background: linear-gradient(150deg, #ff6347 0%, #ff8c42 60%, #ffb347 100%);
+    color: #fff;
+    text-align: center;
+    padding: 80px 24px 120px;
+    overflow: hidden;
   }
-  .container {
-    max-width: 800px;
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 20%, rgba(255,255,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 520px;
     margin: 0 auto;
   }
-  .section-title {
-    font-size: 1.75rem;
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-size: 0.75rem;
     font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+  .app-icon {
+    font-size: 80px;
+    line-height: 1;
+    filter: drop-shadow(0 6px 20px rgba(0,0,0,0.2));
+    animation: float 3s ease-in-out infinite;
+    display: block;
+    margin-bottom: 16px;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .app-name {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .app-kana {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+  .hero-copy {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+  .hero-scroll-hint {
+    margin-top: 48px;
+    opacity: 0.6;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+  .hero-wave {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    line-height: 0;
+  }
+  .hero-wave svg { width: 100%; height: 80px; }
+
+  /* ── PROBLEM ── */
+  .problem {
+    padding: 100px 0 80px;
+    background: #fff;
+  }
+  .problem-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .problem-card {
+    background: #f7f7f7;
+    border-radius: var(--radius);
+    padding: 32px 24px;
     text-align: center;
+  }
+  .problem-emoji { font-size: 2.5rem; margin-bottom: 16px; }
+  .problem-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+  .problem-note {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--tomato);
+  }
+
+  /* ── SOLUTION ── */
+  .solution {
+    padding: 80px 0;
+    background: var(--tomato-light);
+  }
+  .solution-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 56px;
+    align-items: center;
+  }
+  @media (max-width: 600px) {
+    .solution-inner {
+      grid-template-columns: 1fr;
+    }
+    .solution-visual { display: flex; justify-content: center; }
+  }
+  .solution-body {
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+
+  /* ── HOW TO (VIDEO) ── */
+  .how-to {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+  }
+  .how-to-sub {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
     margin-bottom: 48px;
-    color: #1a1a1a;
+  }
+  .video-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .phone-frame--video {
+    width: 220px;
+  }
+
+  /* ── SCREENSHOTS ── */
+  .screenshots {
+    padding: 80px 0;
+    background: var(--tomato-light);
+  }
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    justify-items: center;
+  }
+  @media (max-width: 600px) {
+    .screenshots-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .screenshot-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .screenshot-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text);
+    text-align: center;
+  }
+
+  /* ── FEATURES ── */
+  .features {
+    padding: 80px 0;
+    background: #fff;
   }
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
   }
   .feature-card {
+    background: var(--tomato-light);
+    border-radius: var(--radius);
+    padding: 36px 28px;
+    transition: transform 0.2s;
+  }
+  .feature-card:hover { transform: translateY(-4px); }
+  .feature-icon-wrap {
+    width: 56px;
+    height: 56px;
     background: #fff;
-    border-radius: 16px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .feature-icon { font-size: 1.75rem; }
+  .feature-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; color: var(--text); }
+  .feature-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* ── DIFFERENTIATORS ── */
+  .diff {
+    padding: 80px 0;
+    background: var(--tomato-light);
+  }
+  .diff-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .diff-item {
+    background: #fff;
+    border-radius: var(--radius);
     padding: 28px 24px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
   }
-  .feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
+  .diff-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .diff-item strong { display: block; font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .diff-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── VOICE ── */
+  .voice {
+    padding: 80px 0;
+    background: #fff;
   }
-  .feature-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #1a1a1a;
+  .voice-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
   }
-  .feature-card p {
-    font-size: 0.875rem;
-    color: #666;
-    line-height: 1.6;
+  .voice-card {
+    border: 2px solid #f0f0f0;
+    border-radius: var(--radius);
+    padding: 32px 24px;
   }
+  .voice-avatar { font-size: 2rem; margin-bottom: 16px; }
+  .voice-text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .voice-text::before { content: '"'; }
+  .voice-text::after { content: '"'; }
+  .voice-tag { font-size: 0.78rem; color: var(--tomato); font-weight: 700; }
 
   /* ── CTA ── */
   .cta {
-    background: var(--tomato);
+    padding: 100px 24px;
+    background: linear-gradient(150deg, #ff6347 0%, #ff8c42 100%);
     color: #fff;
     text-align: center;
-    padding: 80px 24px;
   }
-  .cta h2 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .cta p {
-    opacity: 0.9;
-    margin-bottom: 32px;
-  }
+  .cta-tomato { font-size: 4rem; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+  .cta h2 { font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 800; margin-bottom: 12px; }
+  .cta p { opacity: 0.9; margin-bottom: 36px; font-size: 1.05rem; }
+  .cta-note { margin-top: 20px !important; margin-bottom: 0 !important; font-size: 0.8rem !important; opacity: 0.7 !important; }
 
-  /* ── Footer ── */
+  /* ── FOOTER ── */
   footer {
     background: #1a1a1a;
-    color: #999;
-    text-align: center;
-    padding: 24px;
-    font-size: 0.85rem;
+    color: #888;
+    padding: 40px 24px;
   }
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+  .footer-logo { font-size: 1.1rem; font-weight: 800; color: #fff; }
+  .footer-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .footer-nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+  .footer-nav a:hover { color: var(--tomato); }
+  .footer-divider { color: #555; }
+  .footer-copy { font-size: 0.8rem; }
 </style>

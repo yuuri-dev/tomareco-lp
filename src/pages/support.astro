@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+const appStoreUrl = 'https://apps.apple.com/jp/app/tomareco/id6760455427';
+---
+
+<Layout
+  title="サポート — TomaReco（トマレコ）"
+  description="TomaReco（トマレコ）のサポートページです。よくある質問や使い方をご確認いただけます。"
+>
+  <div class="support-page">
+    <header class="support-header">
+      <a href={base + '/'} class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M19 12H5M12 5l-7 7 7-7"/>
+        </svg>
+        TomaReco トップへ
+      </a>
+      <div class="header-icon">🍅</div>
+      <h1>サポート</h1>
+      <p class="header-sub">TomaReco についてのご質問はこちら</p>
+    </header>
+
+    <div class="support-content">
+
+      <!-- FAQ -->
+      <section class="section">
+        <h2>よくある質問</h2>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>学習記録の登録方法を教えてください</summary>
+            <div class="faq-body">
+              <p>ホーム画面右下の <strong>「＋」ボタン</strong>をタップしてください。タイトルとジャンルを入力して保存するだけで記録完了です。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>ジャンルを追加・編集したい</summary>
+            <div class="faq-body">
+              <p>アプリ下部の <strong>「設定」タブ</strong>を開き、「ジャンル」セクションから追加・編集・削除ができます。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>streak（連続記録）が途切れてしまいました</summary>
+            <div class="faq-body">
+              <p>streak は毎日記録することで継続されます。1日でも記録がないとリセットされます。リマインダー機能（設定タブ）を使うと記録忘れを防げます。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>リマインダーの設定方法を教えてください</summary>
+            <div class="faq-body">
+              <p>設定タブの「毎日リマインダー」トグルをオンにしてください。通知の許可を求めるダイアログが表示されたら「許可」を選択してください。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>データはどこに保存されますか？クラウドに同期されますか？</summary>
+            <div class="faq-body">
+              <p>すべてのデータはお使いの端末内にのみ保存されます。クラウドへの同期や外部サービスへの送信は行いません。アプリをアンインストールするとデータも削除されます。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>機種変更時にデータを引き継ぎできますか？</summary>
+            <div class="faq-body">
+              <p>現在、機種変更時のデータ引き継ぎには対応していません。データは端末内に保存されているため、機種変更後は新たに記録を開始していただく必要があります。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>すべてのデータを削除したい</summary>
+            <div class="faq-body">
+              <p>設定タブの「データ管理」セクションにある <strong>「すべてのデータを削除」</strong>からリセットできます。この操作は取り消せませんのでご注意ください。</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>アプリが正常に動作しない場合は？</summary>
+            <div class="faq-body">
+              <p>一度アプリを完全に終了して再起動してみてください。それでも解決しない場合は、アプリを最新バージョンにアップデートしてお試しください。</p>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section contact-section">
+        <h2>お問い合わせ</h2>
+        <p>上記の FAQ で解決しない場合は、メールまたは App Store のサポートページよりご連絡ください。できる限り迅速にご返答いたします。</p>
+        <div class="contact-btns">
+          <a href="mailto:yuuri5117@gmail.com?subject=TomaReco サポート&body=【お問い合わせ内容】%0A%0A【アプリのバージョン】%0A%0A【端末・OSバージョン】%0A" class="contact-btn contact-btn--primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            メールでお問い合わせ
+          </a>
+          <a href={appStoreUrl} class="contact-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            App Store のサポートページへ
+          </a>
+        </div>
+        <p class="contact-email-note">メールアドレス: <a href="mailto:yuuri5117@gmail.com">yuuri5117@gmail.com</a></p>
+      </section>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  :root {
+    --tomato: #ff6347;
+    --tomato-light: #fff5f3;
+  }
+
+  .support-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ── Header ── */
+  .support-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--tomato);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+    transition: opacity 0.2s;
+  }
+  .back-link:hover { opacity: 0.75; }
+  .header-icon { font-size: 3rem; margin-bottom: 12px; }
+  .support-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+  .header-sub { color: #888; font-size: 1rem; }
+
+  /* ── Sections ── */
+  .support-content {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+  .section h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  /* ── FAQ ── */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .faq-item {
+    background: #fafafa;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--tomato);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after {
+    transform: rotate(45deg);
+  }
+  .faq-item[open] {
+    background: var(--tomato-light);
+  }
+  .faq-body {
+    padding: 0 20px 18px;
+  }
+  .faq-body p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.8;
+  }
+  .faq-body strong { color: #1a1a1a; }
+
+  /* ── Contact ── */
+  .contact-section p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .contact-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .contact-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+  .contact-btn--primary {
+    background: var(--tomato);
+  }
+  .contact-email-note {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0 !important;
+  }
+  .contact-email-note a {
+    color: var(--tomato);
+    text-underline-offset: 3px;
+  }
+</style>
